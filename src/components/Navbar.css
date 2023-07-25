@@ -1,0 +1,190 @@
+.header .container {
+    border-bottom: 1px solid var(--grayish-blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .header .container {
+        min-height: 80px;
+        border: none;
+    }
+}
+
+.header .container .left-side {
+    display: flex;
+    align-items: center;
+}
+
+.header .container .left-side .menu-icon {
+    display: none;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.header .container .left-side ul {
+    display: flex;
+    margin-left: 30px;
+}
+
+@media (max-width: 768px) {
+    .header .container .left-side .menu-icon {
+        display: block;
+    }
+    .header .container .left-side ul {
+        display: none;
+    }
+}
+
+.header .container .left-side ul li {
+    padding: 30px 15px;
+    cursor: pointer;
+    color: var(--dark-grayish-blue);
+    transition: 0.3s;
+    border-bottom: 3px solid transparent;
+}
+
+.header .container .left-side ul li:hover {
+    color: var(--black);
+    border-color: var(--orange);
+}
+
+.header .container .right-side {
+    display: flex;
+    align-items: center;
+}
+
+.header .container .right-side .cart-icon {
+    cursor: pointer;
+    position: relative;
+}
+
+.header .container .right-side .cart-icon.not-empty::before {
+    content: attr(data-count);
+    position: absolute;
+    right: -10px;
+    top: -15px;
+    background-color: var(--orange);
+    width: 25px;
+    height: 20px;
+    border-radius: 50%;
+    color: var(--white);
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .container .right-side .avatar {
+    margin-left: 15px;
+    transition: .3s;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.header .container .right-side .avatar:hover {
+    border: 2px solid var(--orange);
+}
+
+.header .container .right-side .avatar img {
+    width: 40px;
+}
+
+.header .container .right-side {
+    position: relative;
+}
+
+.header .container .right-side .cart {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 400px;
+    min-height: 300px;
+    transform: translateY(105%);
+    padding: 20px;
+    z-index: 10;
+    background-color: var(--white);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header .container .right-side .hidden-cart {
+    display: none;
+}
+
+.header .container .right-side .cart h4 {
+    margin: 0;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--black);
+}
+
+.header .container .right-side .cart .content.empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: var(--dark-grayish-blue);
+    flex: 1;
+}
+
+.header .container .right-side .cart .content.not-empty .item {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    color: var(--grayish-blue);
+    justify-content: space-between;
+}
+
+.header .container .right-side .cart .content.not-empty .item .delete {
+    cursor: pointer;
+}
+
+.header .container .right-side .cart .content.not-empty .item .product-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 6px;
+}
+
+.header .container .right-side .cart .content.not-empty .item .info h5 {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.header .container .right-side .cart .content.not-empty .item .info .product-price {
+    margin-right: 10px;
+}
+
+.header .container .right-side .cart .content.not-empty .item .info .total {
+    font-weight: bold;
+    color: var(--black);
+}
+
+.header .container .right-side .cart .content.not-empty .checkout {
+    outline: none;
+    border: none;
+    color: var(--white);
+    background-color: var(--orange);
+    width: 100%;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+@media (max-width: 767px) {
+    .header .container .right-side .cart {
+        min-width: 90%;
+    }
+
+    .header .container .right-side {
+        position: static;
+    }
+
+    .header .container {
+        position: relative;
+    }
+}
